@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Profissional de Desenvolvimento Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h1>Guia Profissional de Desenvolvimento Web</h1>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo do Projeto</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Alternar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Domine o desenvolvimento web com práticas profissionais</h2>
+                <p>Um guia completo para iniciantes e desenvolvedores que desejam seguir boas práticas desde o início.</p>
+                <a href="#fundamentos" class="btn-primary">Começar</a>
+            </div>
+        </section>
+
+        <section id="fundamentos" class="fundamentos">
+            <div class="container">
+                <h2>O que são HTML, CSS e JavaScript?</h2>
+                <div class="cards-container">
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>HTML</h3>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m12 18 4-6 4 6H4l4-6 4 6z"/>
+                                    <path d="M3 6h18"/>
+                                    <path d="M4 12h16"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>HTML (HyperText Markup Language) é a linguagem de marcação usada para estruturar e dar significado ao conteúdo web.</p>
+                            <div class="code-example">
+                                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Minha Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                            <p class="usage"><strong>Quando usar:</strong> Sempre que precisar estruturar conteúdo na web - textos, imagens, formulários, links, etc.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>CSS</h3>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12a10.94 10.94 0 0 1 5-2.29"/>
+                                    <path d="M12 2a10 10 0 1 1-0.3 19.99"/>
+                                    <path d="M8 21.7a10 10 0 0 0 8 .3"/>
+                                    <path d="M5 18.5a10 10 0 0 1 5-2.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>CSS (Cascading Style Sheets) é usado para estilizar e layoutar elementos HTML, controlando aparência e design.</p>
+                            <div class="code-example">
+                                <pre><code>body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F3F4F6;
+    color: #111827;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}</code></pre>
+                            </div>
+                            <p class="usage"><strong>Quando usar:</strong> Para definir cores, fontes, layouts, espaçamentos e tornar o site visualmente atraente e responsivo.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>JavaScript</h3>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M11 18a3 3 0 0 1-3-3c0-2 3-5 3-5s3 3 3 5a3 3 0 0 1-3 3z"/>
+                                    <path d="M14 9a3 3 0 0 1 3 3c0 2-3 5-3 5s-3-3-3-5a3 3 0 0 1 3-3z"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>JavaScript é uma linguagem de programação que permite criar conteúdo dinâmico e interativo em páginas web.</p>
+                            <div class="code-example">
+                                <pre><code>// Exemplo simples de JavaScript
+const button = document.querySelector('#myButton');
+
+button.addEventListener('click', () => {
+    alert('Botão clicado!');
+    document.body.classList.toggle('dark-mode');
+});</code></pre>
+                            </div>
+                            <p class="usage"><strong>Quando usar:</strong> Para adicionar interatividade, manipular DOM, fazer requisições assíncronas e criar aplicações complexas.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Guia Profissional de Desenvolvimento Web</h3>
+                    <p>Um recurso educativo para desenvolvedores iniciantes e experientes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tecnologias.html">Tecnologias</a></li>
+                        <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                        <li><a href="fluxo.html">Fluxo do Projeto</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Guia Profissional de Desenvolvimento Web. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+</html>
