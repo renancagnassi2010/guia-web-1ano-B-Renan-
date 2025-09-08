@@ -28,8 +28,35 @@ const menuManager = {
         if (menuToggle && nav) {
             menuToggle.addEventListener('click', () => {
                 nav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
                 const isExpanded = nav.classList.contains('active');
                 menuToggle.setAttribute('aria-expanded', isExpanded);
+                
+                // Prevenir scroll quando menu está aberto
+                document.body.style.overflow = isExpanded ? 'hidden' : '';
+            });
+
+            // Fechar menu ao clicar em links
+            const navLinks = nav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Fechar menu ao clicar fora
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') && 
+                    !nav.contains(e.target) && 
+                    !menuToggle.contains(e.target)) {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
             });
         }
     }
