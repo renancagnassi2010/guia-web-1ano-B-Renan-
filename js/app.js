@@ -137,9 +137,30 @@ const utils = {
     }
 };
 
+// Controle do header no scroll
+const headerManager = {
+    init() {
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    }
+};
+
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     themeManager.init();
     menuManager.init();
     keyboardManager.init();
+    headerManager.init();
 });
