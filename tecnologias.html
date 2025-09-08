@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias Web - Guia Profissional de Desenvolvimento Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h1>Guia Profissional de Desenvolvimento Web</h1>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tecnologias.html" class="active">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo do Projeto</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Alternar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="tecnologias">
+            <div class="container">
+                <h2>Panorama de Tecnologias Web</h2>
+                <p>Explore as principais tecnologias utilizadas no desenvolvimento web moderno.</p>
+                
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Buscar tecnologias..." aria-label="Buscar tecnologias">
+                </div>
+
+                <div class="filters" role="group" aria-label="Filtros de tecnologia">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="frontend">Front-end</button>
+                    <button class="filter-btn" data-filter="backend">Back-end</button>
+                    <button class="filter-btn" data-filter="banco">Bancos de Dados</button>
+                    <button class="filter-btn" data-filter="devops">DevOps</button>
+                    <button class="filter-btn" data-filter="testes">Testes</button>
+                </div>
+
+                <div class="grid-tecnologias">
+                    <!-- Os cards serão inseridos via JavaScript -->
+                </div>
+
+                <button class="export-btn" aria-label="Exportar lista de tecnologias">
+                    Exportar para CSV
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Template -->
+    <div class="modal" id="tech-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Fechar modal">&times;</button>
+            <h3 id="modal-title"></h3>
+            <div class="modal-body">
+                <!-- Conteúdo do modal será inserido via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Guia Profissional de Desenvolvimento Web</h3>
+                    <p>Um recurso educativo para desenvolvedores iniciantes e experientes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tecnologias.html">Tecnologias</a></li>
+                        <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                        <li><a href="fluxo.html">Fluxo do Projeto</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Guia Profissional de Desenvolvimento Web. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/app.js"></script>
+    <script>
+    // Dados das tecnologias
+    const tecnologias = [
+        {
+            nome: "React",
+            categoria: "frontend",
+            nivel: "intermediário",
+            descricao: "Biblioteca JavaScript para construção de interfaces de usuário",
+            pros: ["Componentização", "Virtual DOM eficiente"],
+            contras: ["Curva de aprendizado", "Complexidade inicial"],
+            quandoEvitar: "Projetos pequenos e simples",
+            link: "https://reactjs.org"
+        },
+        {
+            nome: "Vue.js",
+            categoria: "frontend",
+            nivel: "básico",
+            descricao: "Framework progressivo para construção de interfaces",
+            pros: ["Fácil de aprender", "Documentação excelente"],
+            contras: ["Ecossistema menor", "Menos vagas no mercado"],
+            quandoEvitar: "Projetos que exigem bibliotecas específicas do React",
+            link: "https://vuejs.org"
+        },
+        {
+            nome: "Node.js",
+            categoria: "backend",
+            nivel: "intermediário",
+            descricao: "Ambiente de execução JavaScript do lado do servidor",
+            pros: ["Mesma linguagem front e back", "Grande ecossistema npm"],
+            contras: ["Performance em CPU intensivo", "Callback hell"],
+            quandoEvitar: "Processamento pesado de CPU",
+            link: "https://nodejs.org"
+        },
+        {
+            nome: "PostgreSQL",
+            categoria: "banco",
+            nivel: "intermediário",
+            descricao: "Sistema de gerenciamento de banco de dados relacional",
+            pros: ["Robusto", "Recursos avançados"],
+            contras: ["Configuração inicial", "Consumo de recursos"],
+            quandoEvitar: "Aplicações muito pequenas",
+            link: "https://www.postgresql.org"
+        },
+        {
+            nome: "Docker",
+            categoria: "devops",
+            nivel: "intermediário",
+            descricao: "Plataforma de containerização de aplicações",
+            pros: ["Isolamento", "Portabilidade"],
+            contras: ["Complexidade inicial", "Overhead de recursos"],
+            quandoEvitar: "Hardware muito limitado",
+            link: "https://www.docker.com"
+        },
+        {
+            nome: "Jest",
+            categoria: "testes",
+            nivel: "básico",
+            descricao: "Framework de testes em JavaScript",
+            pros: ["Fácil de usar", "Bem documentado"],
+            contras: ["Performance em projetos grandes", "Mocks complexos"],
+            quandoEvitar: "Testes E2E complexos",
+            link: "https://jestjs.io"
+        }
+    ];
+
+    // Função para criar card de tecnologia
+    function criarCardTecnologia(tech) {
+        return `
+            <article class="tech-card" data-categoria="${tech.categoria}">
+                <div class="tech-header">
+                    <h3>${tech.nome}</h3>
+                    <span class="badge ${tech.nivel}">${tech.nivel}</span>
+                </div>
+                <p>${tech.descricao}</p>
+                <button class="btn-details" onclick="abrirModal('${tech.nome}')" aria-label="Ver detalhes de ${tech.nome}">
+                    Ver detalhes
+                </button>
+            </article>
+        `;
+    }
+
+    // Função para abrir modal
+    function abrirModal(techNome) {
+        const tech = tecnologias.find(t => t.nome === techNome);
+        if (!tech) return;
+
+        const modal = document.getElementById('tech-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = modal.querySelector('.modal-body');
+
+        modalTitle.textContent = tech.nome;
+        modalBody.innerHTML = `
+            <div class="tech-details">
+                <h4>Quando escolher ${tech.nome}?</h4>
+                <ul>
+                    <li>Quando precisar de ${tech.pros[0].toLowerCase()}</li>
+                    <li>Se a prioridade for ${tech.pros[1].toLowerCase()}</li>
+                    <li>Para projetos que não ${tech.quandoEvitar.toLowerCase()}</li>
+                </ul>
+                <div class="pros-cons">
+                    <div>
+                        <h4>Prós</h4>
+                        <ul>
+                            ${tech.pros.map(pro => `<li>${pro}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contras</h4>
+                        <ul>
+                            ${tech.contras.map(contra => `<li>${contra}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+                <a href="${tech.link}" target="_blank" rel="noopener noreferrer" class="btn-link">
+                    Documentação Oficial
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+            </div>
+        `;
+
+        modal.setAttribute('aria-hidden', 'false');
+        modal.style.display = 'flex';
+    }
+
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', () => {
+        const grid = document.querySelector('.grid-tecnologias');
+        const searchInput = document.querySelector('.search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const modal = document.getElementById('tech-modal');
+        const closeModal = modal.querySelector('.modal-close');
+        
+        // Renderizar cards iniciais
+        grid.innerHTML = tecnologias.map(criarCardTecnologia).join('');
+
+        // Filtros
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filtro = btn.dataset.filter;
+                
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const cards = grid.querySelectorAll('.tech-card');
+                cards.forEach(card => {
+                    if (filtro === 'todos' || card.dataset.categoria === filtro) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                localStorage.setItem('ultimoFiltro', filtro);
+            });
+        });
+
+        // Busca
+        searchInput.addEventListener('input', utils.debounce((e) => {
+            const termo = e.target.value.toLowerCase();
+            const cards = grid.querySelectorAll('.tech-card');
+            
+            cards.forEach(card => {
+                const nome = card.querySelector('h3').textContent.toLowerCase();
+                const descricao = card.querySelector('p').textContent.toLowerCase();
+                
+                if (nome.includes(termo) || descricao.includes(termo)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }, 300));
+
+        // Fechar modal
+        closeModal.addEventListener('click', () => {
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+        });
+
+        // Fechar modal com ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.setAttribute('aria-hidden', 'true');
+                modal.style.display = 'none';
+            }
+        });
+
+        // Exportar CSV
+        document.querySelector('.export-btn').addEventListener('click', () => {
+            const visibleCards = Array.from(grid.querySelectorAll('.tech-card'))
+                .filter(card => card.style.display !== 'none')
+                .map(card => {
+                    const nome = card.querySelector('h3').textContent;
+                    const tech = tecnologias.find(t => t.nome === nome);
+                    return {
+                        Nome: tech.nome,
+                        Categoria: tech.categoria,
+                        Nível: tech.nivel,
+                        Descrição: tech.descricao,
+                        'Prós': tech.pros.join('; '),
+                        'Contras': tech.contras.join('; ')
+                    };
+                });
+
+            utils.exportToCSV(visibleCards, 'tecnologias.csv');
+        });
+
+        // Restaurar último filtro
+        const ultimoFiltro = localStorage.getItem('ultimoFiltro');
+        if (ultimoFiltro) {
+            const btn = document.querySelector(`[data-filter="${ultimoFiltro}"]`);
+            if (btn) btn.click();
+        }
+    });
+    </script>
+</body>
+</html>

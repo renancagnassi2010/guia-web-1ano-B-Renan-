@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas Práticas - Guia Profissional de Desenvolvimento Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h1>Guia Profissional de Desenvolvimento Web</h1>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html" class="active">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo do Projeto</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Alternar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="boas-praticas">
+            <div class="container">
+                <h2>Boas Práticas de Desenvolvimento Web</h2>
+                <p>Aprenda as melhores práticas para criar sites profissionais, acessíveis e de alta qualidade.</p>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="progress-text">0% concluído</span>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <h3>Semântica & Acessibilidade</h3>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="semantica" value="landmarks">
+                                    <span>Usar landmarks HTML5 (header, nav, main, footer)</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="semantica" value="alt">
+                                    <span>Adicionar alt descritivo em imagens</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="semantica" value="labels">
+                                    <span>Conectar labels aos inputs com for/id</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="semantica" value="contraste">
+                                    <span>Garantir contraste adequado (WCAG 2.1)</span>
+                                </label>
+                            </div>
+                            <div class="code-example">
+                                <pre><code>&lt;!-- Exemplo de HTML semântico e acessível --&gt;
+&lt;header role="banner"&gt;
+    &lt;nav role="navigation" aria-label="Principal"&gt;
+        &lt;!-- Links do menu --&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main role="main"&gt;
+    &lt;form&gt;
+        &lt;label for="nome"&gt;Nome completo&lt;/label&gt;
+        &lt;input type="text" id="nome" required&gt;
+    &lt;/form&gt;
+&lt;/main&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <h3>Responsividade</h3>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="responsividade" value="mobile">
+                                    <span>Desenvolver com abordagem Mobile First</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="responsividade" value="flexbox">
+                                    <span>Utilizar Flexbox e Grid para layouts</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="responsividade" value="unidades">
+                                    <span>Usar unidades relativas (rem, em, %)</span>
+                                </label>
+                            </div>
+                            <div class="code-example">
+                                <pre><code>/* Exemplo de CSS responsivo */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    );
+    gap: 1rem;
+}
+
+.texto {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <h3>Organização de CSS</h3>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="css" value="bem">
+                                    <span>Seguir metodologia BEM ou similar</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="css" value="variaveis">
+                                    <span>Utilizar variáveis CSS para consistência</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="css" value="comentarios">
+                                    <span>Documentar seções importantes com comentários</span>
+                                </label>
+                            </div>
+                            <div class="code-example">
+                                <pre><code>/* Exemplo de CSS organizado com BEM */
+.card { }
+.card__header { }
+.card__title { }
+.card--featured { }
+
+/* Variáveis CSS */
+:root {
+    --color-primary: #2563EB;
+    --spacing-sm: 0.5rem;
+    --font-body: 'Inter', sans-serif;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <h3>Performance Web</h3>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="performance" value="imagens">
+                                    <span>Otimizar e comprimir imagens</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="performance" value="lazy">
+                                    <span>Implementar lazy loading em imagens</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="performance" value="js">
+                                    <span>Minimizar uso de JavaScript</span>
+                                </label>
+                            </div>
+                            <div class="code-example">
+                                <pre><code>&lt;!-- Exemplo de lazy loading --&gt;
+&lt;img 
+    src="placeholder.jpg"
+    data-src="imagem-real.jpg"
+    loading="lazy"
+    alt="Descrição da imagem"
+&gt;
+
+&lt;script&gt;
+// Verificar suporte a Intersection Observer
+if ('IntersectionObserver' in window) {
+    // Implementar lazy loading
+}
+&lt;/script&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <h3>Versionamento</h3>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="git" value="commits">
+                                    <span>Fazer commits pequenos e frequentes</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="git" value="mensagens">
+                                    <span>Escrever mensagens claras nos commits</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="git" value="branches">
+                                    <span>Usar branches para novas features</span>
+                                </label>
+                            </div>
+                            <div class="code-example">
+                                <pre><code># Exemplo de boas práticas no Git
+git checkout -b feature/novo-menu
+
+# Fazer alterações...
+
+git add .
+git commit -m "feat: adiciona menu responsivo
+
+- Implementa toggle do menu
+- Adiciona animação de slide
+- Ajusta posicionamento no mobile"
+
+git push origin feature/novo-menu</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <h3>JavaScript</h3>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="javascript" value="funcoes">
+                                    <span>Criar funções puras sempre que possível</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="javascript" value="nomes">
+                                    <span>Usar nomes descritivos para variáveis e funções</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="javascript" value="erros">
+                                    <span>Implementar tratamento de erros</span>
+                                </label>
+                            </div>
+                            <div class="code-example">
+                                <pre><code>// Exemplo de boas práticas em JavaScript
+// Função pura
+function calcularPrecoTotal(items) {
+    return items.reduce((total, item) => 
+        total + item.preco * item.quantidade, 
+        0
+    );
+}
+
+// Tratamento de erros
+async function buscarDados() {
+    try {
+        const resposta = await fetch('/api/dados');
+        if (!resposta.ok) {
+            throw new Error('Erro ao buscar dados');
+        }
+        return await resposta.json();
+    } catch (erro) {
+        console.error(erro);
+        mostrarErroUsuario(erro.message);
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Guia Profissional de Desenvolvimento Web</h3>
+                    <p>Um recurso educativo para desenvolvedores iniciantes e experientes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tecnologias.html">Tecnologias</a></li>
+                        <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                        <li><a href="fluxo.html">Fluxo do Projeto</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Guia Profissional de Desenvolvimento Web. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/app.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                
+                // Toggle current item
+                header.setAttribute('aria-expanded', !isExpanded);
+                content.style.maxHeight = isExpanded ? null : `${content.scrollHeight}px`;
+            });
+        });
+
+        // Checklist functionality
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const progressBar = document.querySelector('.progress');
+        const progressText = document.querySelector('.progress-text');
+        
+        // Load saved progress
+        const savedProgress = JSON.parse(localStorage.getItem('boasPraticasProgress') || '{}');
+        checkboxes.forEach(checkbox => {
+            const id = `${checkbox.name}-${checkbox.value}`;
+            checkbox.checked = savedProgress[id] || false;
+        });
+        
+        // Update progress
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            progressBar.style.width = `${percentage}%`;
+            progressBar.setAttribute('aria-valuenow', percentage);
+            progressText.textContent = `${percentage}% concluído`;
+            
+            // Save progress
+            const progress = {};
+            checkboxes.forEach(checkbox => {
+                const id = `${checkbox.name}-${checkbox.value}`;
+                progress[id] = checkbox.checked;
+            });
+            localStorage.setItem('boasPraticasProgress', JSON.stringify(progress));
+        }
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+        
+        // Initial progress update
+        updateProgress();
+    });
+    </script>
+</body>
+</html>
