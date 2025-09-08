@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo do Projeto - Guia Profissional de Desenvolvimento Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h1>Guia Profissional de Desenvolvimento Web</h1>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html" class="active">Fluxo do Projeto</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="fluxo-section">
+            <div class="container">
+                <h2 class="gradient-text animate-fade-in">Fluxo de Desenvolvimento de Projetos</h2>
+                <p class="text-center mb-4 animate-fade-in" style="animation-delay: 0.2s">Conheça as etapas essenciais para desenvolver projetos web de forma profissional.</p>
+
+                <div class="timeline animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="timeline-item card glass">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h3 class="gradient-text">Planejamento</h3>
+                            <ul class="checklist">
+                                <li>Definir objetivos do projeto</li>
+                                <li>Identificar público-alvo</li>
+                                <li>Levantar requisitos</li>
+                                <li>Escolher tecnologias</li>
+                                <li>Criar cronograma</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item card glass">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h3 class="gradient-text">Design</h3>
+                            <ul class="checklist">
+                                <li>Criar wireframes</li>
+                                <li>Desenvolver protótipos</li>
+                                <li>Definir paleta de cores</li>
+                                <li>Escolher tipografia</li>
+                                <li>Validar com stakeholders</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item card glass">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h3 class="gradient-text">Desenvolvimento</h3>
+                            <ul class="checklist">
+                                <li>Configurar ambiente</li>
+                                <li>Implementar estrutura HTML</li>
+                                <li>Estilizar com CSS</li>
+                                <li>Adicionar interatividade com JavaScript</li>
+                                <li>Seguir boas práticas de código</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item card glass">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h3 class="gradient-text">Testes</h3>
+                            <ul class="checklist">
+                                <li>Realizar testes de funcionalidade</li>
+                                <li>Verificar responsividade</li>
+                                <li>Testar performance</li>
+                                <li>Validar acessibilidade</li>
+                                <li>Fazer testes de usabilidade</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item card glass">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h3 class="gradient-text">Otimização</h3>
+                            <ul class="checklist">
+                                <li>Otimizar imagens</li>
+                                <li>Minificar arquivos</li>
+                                <li>Melhorar performance</li>
+                                <li>Resolver problemas de SEO</li>
+                                <li>Ajustar compatibilidade cross-browser</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item card glass">
+                        <div class="timeline-number">6</div>
+                        <div class="timeline-content">
+                            <h3 class="gradient-text">Lançamento</h3>
+                            <ul class="checklist">
+                                <li>Preparar documentação</li>
+                                <li>Configurar servidor</li>
+                                <li>Fazer deploy</li>
+                                <li>Monitorar métricas</li>
+                                <li>Coletar feedback</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section mt-5 animate-fade-in" style="animation-delay: 0.6s">
+                    <h3 class="gradient-text text-center">Dicas Importantes</h3>
+                    <div class="cards-container">
+                        <div class="card glass">
+                            <h4>Versionamento</h4>
+                            <p>Use Git para controle de versão desde o início do projeto. Faça commits frequentes e mantenha um histórico organizado.</p>
+                        </div>
+                        <div class="card glass">
+                            <h4>Documentação</h4>
+                            <p>Mantenha a documentação atualizada. Inclua instruções de setup, arquitetura e decisões importantes do projeto.</p>
+                        </div>
+                        <div class="card glass">
+                            <h4>Code Review</h4>
+                            <p>Implemente processo de revisão de código. Isso ajuda a manter a qualidade e compartilhar conhecimento na equipe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="gradient-text">Guia Profissional de Desenvolvimento Web</h3>
+                    <p>Um recurso educativo para desenvolvedores iniciantes e experientes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tecnologias.html">Tecnologias</a></li>
+                        <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                        <li><a href="fluxo.html" class="active">Fluxo do Projeto</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Guia Profissional de Desenvolvimento Web. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
